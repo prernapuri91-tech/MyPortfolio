@@ -7,7 +7,7 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -16,11 +16,80 @@ body {
   color: #e2e8f0;
 }
 
+/* NAV */
+.navbar-custom {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-custom .nav-link {
+  color: #94a3b8 !important;
+  font-size: 14px;
+  padding: 8px 14px;
+  transition: color 0.2s;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #60a5fa !important;
+}
+
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  padding: 100px 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0f172a 100%);
+  padding: 110px 20px 80px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(96,165,250,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.hero .tagline {
+  color: #60a5fa;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.hero .contact-line {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.hero .contact-line a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.hero .contact-line a:hover {
+  color: #60a5fa;
 }
 
 /* SECTIONS */
@@ -28,128 +97,391 @@ body {
   padding: 70px 20px;
 }
 
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #60a5fa;
+  display: block;
+  margin-bottom: 6px;
+}
+
 /* CARDS */
 .card {
   background: #1e293b;
-  border: none;
-  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
   color: #e2e8f0;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  transition: 0.3s;
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.35);
 }
 
-/* BADGES */
-.badge {
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 20px;
+/* TIMELINE */
+.timeline-item {
+  position: relative;
+  padding-left: 22px;
+  border-left: 2px solid #334155;
+  margin-bottom: 0;
 }
 
-/* HEADINGS */
-h2 {
+.timeline-item::before {
+  content: '';
+  width: 10px; height: 10px;
+  background: #60a5fa;
+  border-radius: 50%;
+  position: absolute;
+  left: -6px; top: 6px;
+}
+
+/* SKILL BADGES */
+.skill-group {
+  margin-bottom: 16px;
+}
+
+.skill-group-label {
+  font-size: 0.78rem;
+  color: #64748b;
   font-weight: 600;
-  color: #f1f5f9;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.badge-skill {
+  display: inline-block;
+  font-size: 13px;
+  padding: 5px 13px;
+  border-radius: 20px;
+  margin: 4px;
+  font-weight: 400;
+}
+
+/* PROJECT TAGS */
+.tech-tag {
+  font-size: 11.5px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: rgba(96,165,250,0.12);
+  color: #93c5fd;
+  border: 1px solid rgba(96,165,250,0.2);
+  margin: 3px 2px;
+  display: inline-block;
+}
+
+/* CERT LIST */
+.cert-item {
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  border-left: 3px solid #60a5fa;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+/* AVAILABILITY BANNER */
+.availability-banner {
+  background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(16,185,129,0.08));
+  border: 1px solid rgba(34,197,94,0.25);
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: inline-block;
+  font-size: 0.88rem;
+  color: #86efac;
 }
 
 /* BUTTONS */
-.btn-light {
-  background: #e2e8f0;
-  color: #0f172a;
+.btn-hero-primary {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
 }
 
-.btn-outline-light {
-  border-color: #e2e8f0;
+.btn-hero-primary:hover {
+  background: #2563eb;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-hero-outline {
+  background: transparent;
   color: #e2e8f0;
+  border: 1.5px solid rgba(226,232,240,0.4);
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-hero-outline:hover {
+  border-color: #60a5fa;
+  color: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* SOCIAL ICONS */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: #94a3b8;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin: 0 4px;
+}
+
+.social-icon:hover {
+  border-color: #60a5fa;
+  color: #60a5fa;
+  transform: translateY(-2px);
 }
 
 /* FOOTER */
 footer {
   background: #020617;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+h2 {
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #334155, transparent);
+  margin: 0 auto;
+  max-width: 80px;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav class="navbar navbar-expand-md navbar-custom px-4 py-2">
+  <span class="fw-semibold" style="color:#e2e8f0; font-size:15px;">Prerna Puri</span>
+  <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" style="color:#94a3b8; box-shadow:none;">
+    <i class="bi bi-list" style="font-size:22px;"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="mainNav">
+    <div class="d-md-flex ms-md-auto mt-2 mt-md-0">
+      <a class="nav-link" href="#summary">Summary</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#education">Education</a>
+      <a class="nav-link" href="#certifications">Certifications</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
-  <h1 class="fw-bold">Prerna Puri</h1>
-  <p>Nashik, Maharashtra | 9137889824 | prernapuri91@gmail.com</p>
-  <p class="fs-5">Full Stack Developer | Deep Learning Enthusiast</p>
+  <h1 class="fw-bold mb-2">Prerna Puri</h1>
+  <p class="tagline mb-3">Java Developer &nbsp;|&nbsp; Full Stack Developer &nbsp;|&nbsp; Software Engineer</p>
 
-  <a href="resume.pdf" target="_blank" class="btn btn-light mt-3 me-2">View Resume</a>
-  <a href="resume.pdf" download class="btn btn-outline-light mt-3">Download Resume</a>
-</section>
+  <p class="contact-line mb-1">
+    <i class="bi bi-telephone-fill me-1"></i> 9137889824
+    &nbsp;&nbsp;
+    <i class="bi bi-envelope-fill me-1"></i>
+    <a href="mailto:prernapuri91@gmail.com">prernapuri91@gmail.com</a>
+    &nbsp;&nbsp;
+    <i class="bi bi-geo-alt-fill me-1"></i> Nashik, Maharashtra
+  </p>
 
-<!-- OBJECTIVE -->
-<section class="section text-center">
-  <h2>Objective</h2>
-  <div class="row justify-content-center mt-4">
-    <div class="col-lg-8">
-      <div class="card p-4">
-        Motivated and detail-oriented MCA student with a strong foundation in programming, web development, and problem-solving. Seeking an entry-level opportunity in software development where I can apply my technical skills, contribute to real-world projects, and continuously grow in a dynamic and innovative environment.
-      </div>
-    </div>
+  <div class="my-3">
+    <a href="https://www.linkedin.com/in/prerna-puri-49a1392aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/prernapuri91-tech" target="_blank" class="social-icon" title="GitHub"><i class="bi bi-github"></i></a>
+  </div>
+
+  <div class="mt-3">
+    <a href="resume.pdf" target="_blank" class="btn-hero-primary me-2">
+      <i class="bi bi-eye me-1"></i> View Resume
+    </a>
+    <a href="resume.pdf" download class="btn-hero-outline">
+      <i class="bi bi-download me-1"></i> Download Resume
+    </a>
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section class="section">
-  <h2 class="text-center mb-4">Education</h2>
+<!-- PROFESSIONAL SUMMARY -->
+<section id="summary" class="section text-center">
+  <span class="section-label">About</span>
+  <h2>Professional Summary</h2>
+  <div class="divider"></div>
   <div class="container">
-    <div class="card p-4">
-      <ul class="list-unstyled">
-        <li class="mb-3"><b>BCA</b> - Nashik Panchavati College (2025)<br>FY: 7.95 | SY: 7.59 | TY: 8.70 SGPA</li>
-        <li><b>MCA</b> - (Ongoing)<br>1st Sem: 8.23 SGPA</li>
-      </ul>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card p-4" style="line-height: 1.8; font-size: 0.95rem; text-align: left;">
+          Results-driven Java Developer and MCA student with strong fundamentals in object-oriented programming, full-stack web development, and relational databases. Dual-certified in Java by <strong>IIT Bombay</strong> and <strong>NPTEL (IIT Kharagpur)</strong>. Completed a hands-on internship at <strong>AI Leela (2026)</strong> where I learned HTML, CSS, Python, Flask, and Flask-based database integration — and independently built, designed, and deployed a personal portfolio as a mini project. Proficient in Java, Python, HTML, CSS, PHP, and MySQL. Eager to contribute technical skills and a strong learning mindset to a Java-focused engineering team.
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section class="section text-center">
-  <h2 class="mb-4">Skills</h2>
+<section id="skills" class="section text-center" style="background: rgba(255,255,255,0.02);">
+  <span class="section-label">What I work with</span>
+  <h2>Technical Skills</h2>
+  <div class="divider"></div>
   <div class="container">
-    <span class="badge bg-primary m-2">Python</span>
-    <span class="badge bg-primary m-2">PHP</span>
-    <span class="badge bg-primary m-2">MySQL</span>
-    <span class="badge bg-success m-2">Django</span>
-    <span class="badge bg-secondary m-2">Adaptability</span>
-    <span class="badge bg-secondary m-2">Persistence</span>
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="card p-4 text-start">
+
+          <div class="skill-group">
+            <div class="skill-group-label">Frontend &nbsp;<small style="color:#60a5fa; font-size:10px; text-transform:none; letter-spacing:0;">(Internship)</small></div>
+            <span class="badge-skill" style="background:#1e3a8a;">HTML5</span>
+            <span class="badge-skill" style="background:#1e3a8a;">CSS3</span>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Backend</div>
+            <span class="badge-skill bg-primary">Java</span>
+            <span class="badge-skill bg-primary">Python</span>
+            <span class="badge-skill bg-primary">PHP</span>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Framework</div>
+            <span class="badge-skill bg-success">Flask</span>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Databases</div>
+            <span class="badge-skill bg-warning text-dark">MySQL</span>
+            <span class="badge-skill bg-warning text-dark">SQLite</span>
+          </div>
+
+          <div class="skill-group mb-0">
+            <div class="skill-group-label">Tools &amp; Platforms</div>
+            <span class="badge-skill bg-secondary">VS Code</span>
+            <span class="badge-skill bg-secondary">XAMPP</span>
+            <span class="badge-skill bg-secondary">Git</span>
+            <span class="badge-skill bg-secondary">GitHub</span>
+            <span class="badge-skill bg-secondary">Netlify</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNSHIP EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="text-center">
+    <span class="section-label">Work Experience</span>
+    <h2>Internship Experience</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="card p-4">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+            <div>
+              <h5 class="fw-semibold mb-0" style="color:#60a5fa;">Full Stack Development Intern</h5>
+              <span style="color:#94a3b8; font-size:0.9rem;">AI Leela</span>
+            </div>
+            <span class="badge bg-success" style="font-size:12px;">2026 &nbsp;·&nbsp; Currently Pursuing</span>
+          </div>
+          <div class="timeline-item ps-3 mb-2">Learning full-stack web development with Python, Flask, and Flask-based database integration.</div>
+          <div class="timeline-item ps-3 mb-2">Built hands-on knowledge of HTML and CSS for designing responsive, user-friendly web interfaces.</div>
+          <div class="timeline-item ps-3 mb-2">Developed and deployed a personal portfolio website as a mini project — live at <a href="https://prernapuriportfolio.netlify.app" target="_blank" style="color:#60a5fa;">prernapuriportfolio.netlify.app</a></div>
+          <div class="timeline-item ps-3">Gaining practical exposure to end-to-end project development: design → backend → deployment.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="section">
-  <h2 class="text-center mb-4">Projects</h2>
+<section id="projects" class="section" style="background: rgba(255,255,255,0.02);">
+  <div class="text-center">
+    <span class="section-label">What I've built</span>
+    <h2>Projects</h2>
+    <div class="divider"></div>
+  </div>
   <div class="container">
     <div class="row g-4">
 
+      <!-- Portfolio -->
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <span class="badge bg-primary mb-2">🔹 Project</span>
-          <h5>Online Job Portal</h5>
-          <p>Developed using PHP & MySQL with job search, authentication, and employer dashboard.</p>
+        <div class="card p-4 h-100">
+          <div class="mb-3">
+            <i class="bi bi-person-badge-fill" style="font-size:28px; color:#60a5fa;"></i>
+          </div>
+          <h5 class="fw-semibold">Personal Portfolio Website</h5>
+          <p class="text-muted" style="font-size:0.88rem; line-height:1.7;">
+            Designed, developed, and deployed a personal portfolio website as part of the AI Leela internship. Used HTML5 and CSS3 for responsive design and Flask for backend routing. Deployed live on Netlify.
+          </p>
+          <div class="mt-auto pt-2">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Netlify</span>
+          </div>
+          <a href="https://prernapuriportfolio.netlify.app" target="_blank" class="btn btn-sm btn-outline-primary mt-3" style="border-radius:20px; font-size:12px;">
+            <i class="bi bi-box-arrow-up-right me-1"></i> View Live
+          </a>
         </div>
       </div>
 
+      <!-- Shopping Portal -->
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <span class="badge bg-success mb-2">🛒 Project</span>
-          <h5>Online Shopping Portal</h5>
-          <p>Built an e-commerce system with product catalog, cart, and order management.</p>
+        <div class="card p-4 h-100">
+          <div class="mb-3">
+            <i class="bi bi-cart-fill" style="font-size:28px; color:#34d399;"></i>
+          </div>
+          <h5 class="fw-semibold">Online Shopping Portal</h5>
+          <p class="text-muted" style="font-size:0.88rem; line-height:1.7;">
+            Built a secure, responsive e-commerce platform with user authentication and session management. Integrated MySQL for product catalog, cart, and order management. Implemented role-based access control and payment gateway simulation.
+          </p>
+          <div class="mt-auto pt-2">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+          </div>
         </div>
       </div>
 
+      <!-- E-Book Store -->
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <span class="badge bg-info mb-2">📚 Project</span>
-          <h5>E-Book Store</h5>
-          <p>Python & SQLite based platform with authentication and book download features.</p>
+        <div class="card p-4 h-100">
+          <div class="mb-3">
+            <i class="bi bi-book-fill" style="font-size:28px; color:#a78bfa;"></i>
+          </div>
+          <h5 class="fw-semibold">E-Book Store Application</h5>
+          <p class="text-muted" style="font-size:0.88rem; line-height:1.7;">
+            Developed a desktop application for browsing, searching, and downloading e-books with a clean UI. Designed normalized SQLite schema with optimized queries for fast data retrieval.
+          </p>
+          <div class="mt-auto pt-2">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">SQLite</span>
+          </div>
         </div>
       </div>
 
@@ -157,37 +489,137 @@ footer {
   </div>
 </section>
 
-<!-- ACTIVITIES -->
-<section class="section text-center">
-  <h2>Activities</h2>
-  <p>NSS Volunteer | Batch Coordinator (CBFI)</p>
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="text-center">
+    <span class="section-label">Academic Background</span>
+    <h2>Education</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center g-4">
+
+      <div class="col-md-5">
+        <div class="card p-4 h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div style="font-size:32px; color:#60a5fa; line-height:1;"><i class="bi bi-mortarboard-fill"></i></div>
+            <div>
+              <h5 class="fw-semibold mb-1">Master of Computer Applications (MCA)</h5>
+              <p class="mb-1" style="color:#94a3b8; font-size:0.9rem;">MET Institute of Engineering, Nashik</p>
+              <span class="badge bg-success" style="font-size:11px;">Currently Pursuing</span>
+              <p class="mt-2 mb-0" style="font-size:0.88rem;">CGPA: <strong>8.23</strong> (F.Y.)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="card p-4 h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div style="font-size:32px; color:#a78bfa; line-height:1;"><i class="bi bi-mortarboard-fill"></i></div>
+            <div>
+              <h5 class="fw-semibold mb-1">Bachelor of Computer Applications (BCA)</h5>
+              <p class="mb-1" style="color:#94a3b8; font-size:0.9rem;">Panchavati College, Nashik</p>
+              <p class="mt-2 mb-0" style="font-size:0.88rem;">
+                TY: <strong>8.70</strong> CGPA &nbsp;|&nbsp; SY: <strong>7.59</strong> &nbsp;|&nbsp; FY: <strong>7.95</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- CERTIFICATIONS -->
-<section class="section text-center">
-  <h2>Certifications</h2>
-  <p>Pantech IoT Webinar | IBM JavaScript Course</p>
+<!-- CERTIFICATIONS & ACHIEVEMENTS -->
+<section id="certifications" class="section" style="background: rgba(255,255,255,0.02);">
+  <div class="text-center">
+    <span class="section-label">Recognition</span>
+    <h2>Certifications &amp; Achievements</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <div class="cert-item">
+              <i class="bi bi-patch-check-fill me-2" style="color:#fbbf24;"></i>
+              <strong>IIT Bombay</strong> – Java Programming (Spoken Tutorial)
+            </div>
+            <div class="cert-item">
+              <i class="bi bi-patch-check-fill me-2" style="color:#fbbf24;"></i>
+              <strong>NPTEL</strong> – Java Programming (IIT Kharagpur)
+            </div>
+            <div class="cert-item">
+              <i class="bi bi-patch-check-fill me-2" style="color:#fbbf24;"></i>
+              <strong>IIT Bombay</strong> – C++ Programming
+            </div>
+            <div class="cert-item">
+              <i class="bi bi-patch-check-fill me-2" style="color:#60a5fa;"></i>
+              <strong>IBM</strong> – JavaScript Certification
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="cert-item">
+              <i class="bi bi-star-fill me-2" style="color:#34d399;"></i>
+              IoT Webinar – Pantech E-Learning
+            </div>
+            <div class="cert-item">
+              <i class="bi bi-star-fill me-2" style="color:#34d399;"></i>
+              DELNET National Webinar Participation
+            </div>
+            <div class="cert-item">
+              <i class="bi bi-star-fill me-2" style="color:#34d399;"></i>
+              Bajaj Finserv STAR Certificate (HR Workshop)
+            </div>
+            <div class="cert-item">
+              <i class="bi bi-award-fill me-2" style="color:#a78bfa;"></i>
+              Leadership Recognition – <strong>Batch Coordinator, MCA</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section text-center">
+<section id="contact" class="section text-center">
+  <span class="section-label">Get in Touch</span>
   <h2>Contact</h2>
-  <p>Email: prernapuri91@gmail.com</p>
-  <p>Phone: 9137889824</p>
+  <div class="divider"></div>
 
-  <a href="https://www.linkedin.com/in/prerna-puri-49a1392aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="btn btn-primary m-2" target="_blank">
-    <i class="bi bi-linkedin"></i> LinkedIn
-  </a>
+  <p style="font-size:0.95rem;">
+    <i class="bi bi-envelope-fill me-2" style="color:#60a5fa;"></i>
+    <a href="mailto:prernapuri91@gmail.com" style="color:#e2e8f0; text-decoration:none;">prernapuri91@gmail.com</a>
+  </p>
+  <p style="font-size:0.95rem;">
+    <i class="bi bi-telephone-fill me-2" style="color:#60a5fa;"></i>
+    9137889824
+  </p>
+  <p style="font-size:0.95rem;">
+    <i class="bi bi-geo-alt-fill me-2" style="color:#60a5fa;"></i>
+    Nashik, Maharashtra
+  </p>
 
-  <a href="https://github.com/prernapuri91-tech" class="btn btn-dark m-2" target="_blank">
-    <i class="bi bi-github"></i> GitHub
-  </a>
+  <div class="mt-4">
+    <div class="availability-banner">
+      <i class="bi bi-check-circle-fill me-2"></i>
+      Available for Software Developer &amp; Web Dev Roles &nbsp;·&nbsp; Open to Relocation
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="text-center p-4">
-  © 2026 Prerna Puri
+<footer class="text-center p-4" style="color:#64748b; font-size:0.85rem;">
+  © 2026 Prerna Puri &nbsp;·&nbsp; Java Developer · Full Stack Developer · Software Engineer
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
