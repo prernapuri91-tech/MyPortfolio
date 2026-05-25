@@ -19,56 +19,207 @@ body {
 /* HERO */
 .hero {
   background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  padding: 100px 20px;
+  padding: 80px 20px;
   text-align: center;
+  border-bottom: 3px solid #3b82f6;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.hero .tagline {
+  font-size: 1.1rem;
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.hero .contact-info {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.hero .contact-info a {
+  color: #3b82f6;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.hero .contact-info a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  margin-top: 25px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  color: #60a5fa;
 }
 
 /* SECTIONS */
 .section {
-  padding: 70px 20px;
+  padding: 60px 20px;
+  background: #0f172a;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #3b82f6;
+  display: inline-block;
+  padding-bottom: 10px;
 }
 
 /* CARDS */
 .card {
   background: #1e293b;
   border: none;
-  border-radius: 15px;
+  border-radius: 12px;
   color: #e2e8f0;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border-left: 4px solid #3b82f6;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   transition: 0.3s;
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.2);
 }
 
 /* BADGES */
 .badge {
-  font-size: 14px;
-  padding: 8px 12px;
+  font-size: 0.85rem;
+  padding: 6px 12px;
   border-radius: 20px;
+  background: #3b82f6 !important;
+  font-weight: 500;
+  margin: 5px 5px 5px 0;
+}
+
+.badge-skill {
+  background: #3b82f6 !important;
+  display: inline-block;
+}
+
+.badge-tech {
+  background: #0ea5e9 !important;
+  display: inline-block;
 }
 
 /* HEADINGS */
-h2 {
-  font-weight: 600;
+h3 {
+  font-weight: 700;
   color: #f1f5f9;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
-/* BUTTONS */
-.btn-light {
-  background: #e2e8f0;
-  color: #0f172a;
+h4 {
+  font-weight: 600;
+  color: #cbd5e1;
 }
 
-.btn-outline-light {
-  border-color: #e2e8f0;
-  color: #e2e8f0;
+/* LISTS */
+ul {
+  margin-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* SKILL GRID */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #3b82f6;
+}
+
+.skill-card h4 {
+  color: #3b82f6;
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.skill-card p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* PROJECT CARDS */
+.project-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #3b82f6;
+  height: 100%;
+}
+
+.project-card h5 {
+  color: #f1f5f9;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.project-card .tech-stack {
+  font-size: 0.85rem;
+  color: #3b82f6;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.project-card p {
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.6;
 }
 
 /* FOOTER */
 footer {
   background: #020617;
+  border-top: 3px solid #3b82f6;
+  color: #94a3b8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
@@ -77,116 +228,220 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <h1 class="fw-bold">Prerna Puri</h1>
-  <p>Nashik, Maharashtra | 9137889824 | prernapuri91@gmail.com</p>
-  <p class="fs-5">Full Stack Developer | Deep Learning Enthusiast</p>
-
-  <a href="resume.pdf" target="_blank" class="btn btn-light mt-3 me-2">View Resume</a>
-  <a href="resume.pdf" download class="btn btn-outline-light mt-3">Download Resume</a>
+  <h1>PRERNA PURI</h1>
+  <p class="tagline">Java Developer | Full Stack Developer | Software Engineer</p>
+  
+  <div class="contact-info">
+    <span><i class="bi bi-telephone"></i> 9137889824</span> |
+    <span><a href="mailto:prernapuri91@gmail.com"><i class="bi bi-envelope"></i> prernapuri91@gmail.com</a></span> |
+    <span><i class="bi bi-geo-alt"></i> Nashik, Maharashtra</span>
+  </div>
+  
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/prerna-puri-49a1392aa" target="_blank">
+      <i class="bi bi-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/prernapuri91-tech" target="_blank">
+      <i class="bi bi-github"></i> GitHub
+    </a>
+    <a href="https://prernapuri91-tech.github.io/MyPortfolio/" target="_blank">
+      <i class="bi bi-globe"></i> Portfolio
+    </a>
+  </div>
 </section>
 
-<!-- OBJECTIVE -->
-<section class="section text-center">
-  <h2>Objective</h2>
-  <div class="row justify-content-center mt-4">
-    <div class="col-lg-8">
-      <div class="card p-4">
-        Motivated and detail-oriented MCA student with a strong foundation in programming, web development, and problem-solving. Seeking an entry-level opportunity in software development where I can apply my technical skills, contribute to real-world projects, and continuously grow in a dynamic and innovative environment.
+<!-- PROFESSIONAL SUMMARY -->
+<section class="section">
+  <div class="container">
+    <h2>Professional Summary</h2>
+    <div class="card p-4 mt-4">
+      <p>MCA student with strong fundamentals in object-oriented programming, full stack web development, and relational databases. Dwell-certified in Java by IIT Bombay and NPTEL IIT Kharagpur. Completed a hands-on internship at AI Leela (2026) where I learned HTML, CSS, Python, Flask, and Flask-based database integration — and independently built, designed, and deployed a personal portfolio as a mini project. Proficient in Java, Python, HTML, CSS, C, PHP and MySQL. Eager to contribute technical skills and a strong learning mindset to a well-focused engineering team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL SKILLS -->
+<section class="section">
+  <div class="container">
+    <h2>Technical Skills</h2>
+    <div class="skill-grid mt-4">
+      <div class="skill-card">
+        <h4>Languages</h4>
+        <p>Java, Python, C, HTML, CSS, PHP</p>
       </div>
+      <div class="skill-card">
+        <h4>Web & Frameworks</h4>
+        <p>Flask, Django, PHP, REST API issues</p>
+      </div>
+      <div class="skill-card">
+        <h4>Databases</h4>
+        <p>MySQL, SQLite, Flask</p>
+      </div>
+      <div class="skill-card">
+        <h4>Core Java</h4>
+        <p>OOP, Collections, Exception Handling, JDBC, Java 8+</p>
+      </div>
+      <div class="skill-card">
+        <h4>Concepts</h4>
+        <p>OOP, DSA (basic), SDLC</p>
+      </div>
+      <div class="skill-card">
+        <h4>Tools & Others</h4>
+        <p>VS Code, Visual Studio, XAMPP, Git, GitHub, Netlify, Windows</p>
+      </div>
+      <div class="skill-card">
+        <h4>Soft Skills</h4>
+        <p>Coordination, Time Management, Adaptability, Problem-Solving</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNSHIP EXPERIENCE -->
+<section class="section">
+  <div class="container">
+    <h2>Internship Experience</h2>
+    <div class="card p-4 mt-4">
+      <h4>Full Stack Development Intern | AI Leela <span style="float: right; color: #3b82f6;">2026 (Currently Pursuing)</span></h4>
+      <ul>
+        <li>Learned full-stack development with Python, Flask, and Flask-based database integration.</li>
+        <li>Built hands-on knowledge of HTML and CSS for designing responsive, user-friendly web interfaces.</li>
+        <li>Developed and deployed a personal portfolio website as a mini project — live at prernapuriportfolio.netlify.app</li>
+        <li>Gained practical exposure to end-to-end project development: design → backend → deployment.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="row g-4 mt-4">
+
+      <div class="col-md-6">
+        <div class="project-card">
+          <h5>Personal Portfolio Website</h5>
+          <p class="tech-stack"><i class="bi bi-code"></i> HTML, CSS, Python, Flask, Netlify</p>
+          <ul>
+            <li>Designed, developed, and deployed a personal portfolio website as part of the AI Leela internship.</li>
+            <li>Used HTML5 and CSS3 for responsive design and Flask for backend routing.</li>
+            <li>Deployed live on Netlify — accessible at prernapuriportfolio.netlify.app</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="project-card">
+          <h5>Online Shopping Portal</h5>
+          <p class="tech-stack"><i class="bi bi-code"></i> PHP, MySQL, HTML, CSS</p>
+          <ul>
+            <li>Built a secure, responsive e-commerce platform with user authentication and session management.</li>
+            <li>Integrated MySQL for product catalog, cart, and order management with optimized SQL queries.</li>
+            <li>Implemented role-based access control and payment gateway simulation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="project-card">
+          <h5>E-Book Store Application</h5>
+          <p class="tech-stack"><i class="bi bi-code"></i> Python, SQLite</p>
+          <ul>
+            <li>Developed a desktop app for browsing, searching, and downloading e-books with a clean UI.</li>
+            <li>Designed normalized SQLite schema, optimized queries for fast retrieval.</li>
+            <li>Implemented user authentication and role-based access control.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="project-card">
+          <h5>Online Job Portal</h5>
+          <p class="tech-stack"><i class="bi bi-code"></i> PHP, MySQL, HTML, CSS</p>
+          <ul>
+            <li>Developed a job portal connecting job seekers and employers with advanced search filters.</li>
+            <li>Implemented user authentication, application tracking, and employer dashboard.</li>
+            <li>Built responsive interface with PHP backend and MySQL database.</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- EDUCATION -->
 <section class="section">
-  <h2 class="text-center mb-4">Education</h2>
   <div class="container">
-    <div class="card p-4">
-      <ul class="list-unstyled">
-        <li class="mb-3"><b>BCA</b> - Nashik Panchavati College (2025)<br>FY: 7.95 | SY: 7.59 | TY: 8.70 SGPA</li>
-        <li><b>MCA</b> - (Ongoing)<br>1st Sem: 8.23 SGPA</li>
-      </ul>
+    <h2>Education</h2>
+    <div class="card p-4 mt-4">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Master of Computer Applications (MCA)</h4>
+          <p>MIT Institute of Technology, Nashik</p>
+          <p><strong>CGPA:</strong> 8.23 (P.Y.) | Currently Pursuing</p>
+        </div>
+        <div class="col-md-6">
+          <h4>Bachelor of Computer Applications (BCA)</h4>
+          <p>Panchavati College, Nashik</p>
+          <p><strong>CGPA:</strong> 8.70 (T.Y.) | 7.59 (S.Y.) | 7.95 (F.Y.)</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section class="section text-center">
-  <h2 class="mb-4">Skills</h2>
-  <div class="container">
-    <span class="badge bg-primary m-2">Python</span>
-    <span class="badge bg-primary m-2">PHP</span>
-    <span class="badge bg-primary m-2">MySQL</span>
-    <span class="badge bg-success m-2">Django</span>
-    <span class="badge bg-secondary m-2">Adaptability</span>
-    <span class="badge bg-secondary m-2">Persistence</span>
-  </div>
-</section>
-
-<!-- PROJECTS -->
+<!-- CERTIFICATIONS & ACHIEVEMENTS -->
 <section class="section">
-  <h2 class="text-center mb-4">Projects</h2>
   <div class="container">
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <span class="badge bg-primary mb-2">🔹 Project</span>
-          <h5>Online Job Portal</h5>
-          <p>Developed using PHP & MySQL with job search, authentication, and employer dashboard.</p>
+    <h2>Certifications & Achievements</h2>
+    <div class="row g-4 mt-4">
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h5 style="color: #3b82f6; margin-top: 0;">Certifications</h5>
+          <ul style="margin-left: 20px; padding-left: 0;">
+            <li>IIT Bombay – Java Programming (Spoken Tutorial)</li>
+            <li>NPTEL – Java Programming (IIT Kharagpur)</li>
+            <li>IIT Bombay – C++ Programming</li>
+            <li>IBM – JavaScript Certification</li>
+          </ul>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <span class="badge bg-success mb-2">🛒 Project</span>
-          <h5>Online Shopping Portal</h5>
-          <p>Built an e-commerce system with product catalog, cart, and order management.</p>
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h5 style="color: #3b82f6; margin-top: 0;">Achievements</h5>
+          <ul style="margin-left: 20px; padding-left: 0;">
+            <li>IoT Webinar – Pantech E-Learning</li>
+            <li>DELNET National Webinar Participation</li>
+            <li>Bajaj Premier STAR Certificate (HR Workshop)</li>
+            <li>Leadership Recognition – Batch Coordinator, MCA</li>
+          </ul>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <span class="badge bg-info mb-2">📚 Project</span>
-          <h5>E-Book Store</h5>
-          <p>Python & SQLite based platform with authentication and book download features.</p>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 <!-- ACTIVITIES -->
-<section class="section text-center">
-  <h2>Activities</h2>
-  <p>NSS Volunteer | Batch Coordinator (CBFI)</p>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section class="section text-center">
-  <h2>Certifications</h2>
-  <p>Pantech IoT Webinar | IBM JavaScript Course</p>
-</section>
-
-<!-- CONTACT -->
-<section class="section text-center">
-  <h2>Contact</h2>
-  <p>Email: prernapuri91@gmail.com</p>
-  <p>Phone: 9137889824</p>
-
-  <a href="https://www.linkedin.com/in/prerna-puri-49a1392aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="btn btn-primary m-2" target="_blank">
-    <i class="bi bi-linkedin"></i> LinkedIn
-  </a>
-
-  <a href="https://github.com/prernapuri91-tech" class="btn btn-dark m-2" target="_blank">
-    <i class="bi bi-github"></i> GitHub
-  </a>
+<section class="section">
+  <div class="container">
+    <h2>Activities & Volunteering</h2>
+    <div class="card p-4 mt-4">
+      <p><strong>NSS Volunteer:</strong> Active contributor to National Service Scheme community development initiatives.</p>
+      <p><strong>Batch Coordinator (MCA):</strong> Leadership role coordinating batch activities and inter-batch coordination.</p>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="text-center p-4">
-  © 2026 Prerna Puri
+  <p style="margin: 0;">© 2026 Prerna Puri | Available for Software Developer Roles, web dev, Open to Relocation</p>
+  <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: #64748b;">
+    <a href="https://github.com/prernapuri91-tech" style="color: #3b82f6; text-decoration: none;">GitHub</a> | 
+    <a href="https://www.linkedin.com/in/prerna-puri-49a1392aa" style="color: #3b82f6; text-decoration: none;">LinkedIn</a> | 
+    <a href="mailto:prernapuri91@gmail.com" style="color: #3b82f6; text-decoration: none;">Email</a>
+  </p>
 </footer>
 
 </body>
