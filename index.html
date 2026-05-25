@@ -276,16 +276,21 @@ h2 {
 <body>
 
 <!-- NAV -->
-<nav class="navbar-custom px-4 py-2 d-flex justify-content-between align-items-center">
+<nav class="navbar navbar-expand-md navbar-custom px-4 py-2">
   <span class="fw-semibold" style="color:#e2e8f0; font-size:15px;">Prerna Puri</span>
-  <div class="d-none d-md-flex">
-    <a class="nav-link" href="#summary">Summary</a>
-    <a class="nav-link" href="#skills">Skills</a>
-    <a class="nav-link" href="#experience">Experience</a>
-    <a class="nav-link" href="#projects">Projects</a>
-    <a class="nav-link" href="#education">Education</a>
-    <a class="nav-link" href="#certifications">Certifications</a>
-    <a class="nav-link" href="#contact">Contact</a>
+  <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" style="color:#94a3b8; box-shadow:none;">
+    <i class="bi bi-list" style="font-size:22px;"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="mainNav">
+    <div class="d-md-flex ms-md-auto mt-2 mt-md-0">
+      <a class="nav-link" href="#summary">Summary</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#education">Education</a>
+      <a class="nav-link" href="#certifications">Certifications</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
@@ -323,10 +328,12 @@ h2 {
   <span class="section-label">About</span>
   <h2>Professional Summary</h2>
   <div class="divider"></div>
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <div class="card p-4" style="line-height: 1.8; font-size: 0.95rem; text-align: left;">
-        MCA student with strong fundamentals in object-oriented programming, full-stack web development, and relational databases. Dual-certified in Java by <strong>IIT Bombay</strong> and <strong>NPTEL (IIT Kharagpur)</strong>. Completed a hands-on internship at <strong>AI Leela (2026)</strong> where I learned HTML, CSS, Python, Flask, and Flask-based database integration — and independently built, designed, and deployed a personal portfolio as a mini project. Proficient in Java, Python, HTML, CSS, C, PHP, and MySQL. Eager to contribute technical skills and a strong learning mindset to a well-focused engineering team.
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card p-4" style="line-height: 1.8; font-size: 0.95rem; text-align: left;">
+          Results-driven Java Developer and MCA student with strong fundamentals in object-oriented programming, full-stack web development, and relational databases. Dual-certified in Java by <strong>IIT Bombay</strong> and <strong>NPTEL (IIT Kharagpur)</strong>. Completed a hands-on internship at <strong>AI Leela (2026)</strong> where I learned HTML, CSS, Python, Flask, and Flask-based database integration — and independently built, designed, and deployed a personal portfolio as a mini project. Proficient in Java, Python, HTML, CSS, PHP, and MySQL. Eager to contribute technical skills and a strong learning mindset to a Java-focused engineering team.
+        </div>
       </div>
     </div>
   </div>
@@ -343,59 +350,38 @@ h2 {
         <div class="card p-4 text-start">
 
           <div class="skill-group">
-            <div class="skill-group-label">Languages</div>
+            <div class="skill-group-label">Frontend &nbsp;<small style="color:#60a5fa; font-size:10px; text-transform:none; letter-spacing:0;">(Internship)</small></div>
+            <span class="badge-skill" style="background:#1e3a8a;">HTML5</span>
+            <span class="badge-skill" style="background:#1e3a8a;">CSS3</span>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Backend</div>
             <span class="badge-skill bg-primary">Java</span>
             <span class="badge-skill bg-primary">Python</span>
-            <span class="badge-skill bg-primary">C</span>
-            <span class="badge-skill bg-primary">HTML5</span>
-            <span class="badge-skill bg-primary">CSS3</span>
             <span class="badge-skill bg-primary">PHP</span>
           </div>
 
           <div class="skill-group">
-            <div class="skill-group-label">Web &amp; Frameworks</div>
+            <div class="skill-group-label">Framework</div>
             <span class="badge-skill bg-success">Flask</span>
-            <span class="badge-skill bg-success">REST API Basics</span>
-            <span class="badge-skill" style="background:#065f46;">Responsive Design</span>
           </div>
 
           <div class="skill-group">
             <div class="skill-group-label">Databases</div>
             <span class="badge-skill bg-warning text-dark">MySQL</span>
             <span class="badge-skill bg-warning text-dark">SQLite</span>
-            <span class="badge-skill bg-warning text-dark">JDBC</span>
           </div>
 
-          <div class="skill-group">
-            <div class="skill-group-label">Core Java</div>
-            <span class="badge-skill" style="background:#1e3a8a;">OOP</span>
-            <span class="badge-skill" style="background:#1e3a8a;">Collections</span>
-            <span class="badge-skill" style="background:#1e3a8a;">Exception Handling</span>
-            <span class="badge-skill" style="background:#1e3a8a;">Java 8+</span>
-          </div>
-
-          <div class="skill-group">
+          <div class="skill-group mb-0">
             <div class="skill-group-label">Tools &amp; Platforms</div>
             <span class="badge-skill bg-secondary">VS Code</span>
-            <span class="badge-skill bg-secondary">Visual Studio</span>
             <span class="badge-skill bg-secondary">XAMPP</span>
             <span class="badge-skill bg-secondary">Git</span>
             <span class="badge-skill bg-secondary">GitHub</span>
             <span class="badge-skill bg-secondary">Netlify</span>
           </div>
 
-          <div class="skill-group">
-            <div class="skill-group-label">Concepts &amp; Soft Skills</div>
-            <span class="badge-skill bg-info text-dark">DSA (Basic)</span>
-            <span class="badge-skill bg-info text-dark">SDLC</span>
-            <span class="badge-skill" style="background:#374151;">Time Management</span>
-            <span class="badge-skill" style="background:#374151;">Coordination</span>
-          </div>
-
-          <div class="skill-group mb-0">
-            <div class="skill-group-label">Operating System</div>
-            <span class="badge-skill" style="background:#292524; border:1px solid #57534e;">Windows</span>
-          </div>
         </div>
       </div>
     </div>
