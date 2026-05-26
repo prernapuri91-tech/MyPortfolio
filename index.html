@@ -42,6 +42,10 @@ body {
   font-size: 0.95rem;
   color: #cbd5e1;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
 .hero .contact-info a {
@@ -200,6 +204,18 @@ ul li {
   line-height: 1.6;
 }
 
+.project-card ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.project-card ul li {
+  color: #cbd5e1;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
 /* FOOTER */
 footer {
   background: #020617;
@@ -229,11 +245,11 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <h1>PRERNA PURI</h1>
-  <p class="tagline">Java Developer | Full Stack Developer | Software Engineer</p>
-  
+  <p class="tagline">Full Stack Developer</p>
+
   <div class="contact-info">
-    <span><i class="bi bi-telephone"></i> 9137889824</span> |
-    <span><a href="mailto:prernapuri91@gmail.com"><i class="bi bi-envelope"></i> prernapuri91@gmail.com</a></span> |
+    <span><i class="bi bi-telephone"></i> 9137889824</span>
+    <span><a href="mailto:prernapuri91@gmail.com"><i class="bi bi-envelope"></i> prernapuri91@gmail.com</a></span>
     <span><i class="bi bi-geo-alt"></i> Nashik, Maharashtra</span>
   </div>
   
@@ -264,7 +280,13 @@ footer {
   <div class="container">
     <h2>Professional Summary</h2>
     <div class="card p-4 mt-4">
-      <p>MCA student with strong fundamentals in object-oriented programming, full stack web development, and relational databases. Dwell-certified in Java by IIT Bombay and NPTEL IIT Kharagpur. Completed a hands-on internship at AI Leela (2026) where I learned HTML, CSS, Python, Flask, and Flask-based database integration — and independently built, designed, and deployed a personal portfolio as a mini project. Proficient in Java, Python, HTML, CSS, C, PHP and MySQL. Eager to contribute technical skills and a strong learning mindset to a well-focused engineering team.</p>
+      <ul style="margin-left: 20px; padding-left: 0;">
+        <li>MCA student with strong fundamentals in object-oriented programming, full stack web development, and relational databases.</li>
+        <li>Certified in Java by IIT Bombay (Spoken Tutorial) and NPTEL IIT Kharagpur.</li>
+        <li>Completed a hands-on internship at AI Leela (2026) — learned HTML, CSS, Python, Flask, and Flask-based database integration.</li>
+        <li>Independently built, designed, and deployed a personal portfolio as a mini project.</li>
+        <li>Proficient in Java, Python, HTML, CSS, C, PHP, and MySQL. Eager to contribute to a well-focused engineering team.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -331,10 +353,10 @@ footer {
       <div class="col-md-6">
         <div class="project-card">
           <h5>Personal Portfolio Website</h5>
-          <p class="tech-stack"><i class="bi bi-code"></i> HTML, CSS, Python, Flask, Netlify</p>
+          <p class="tech-stack"><i class="bi bi-code"></i> HTML, CSS, Netlify</p>
           <ul>
-            <li>Designed, developed, and deployed a personal portfolio website as part of the AI Leela internship.</li>
-            <li>Used HTML5 and CSS3 for responsive design and Flask for backend routing.</li>
+            <li>Designed and developed a personal portfolio website as part of the AI Leela internship using HTML5 and CSS3.</li>
+            <li>Built fully responsive layout with clean, minimal design.</li>
             <li>Deployed live on Netlify — accessible at prernapuriportfolio.netlify.app</li>
           </ul>
         </div>
